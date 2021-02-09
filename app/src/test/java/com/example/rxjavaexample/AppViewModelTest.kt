@@ -85,6 +85,8 @@ class AppViewModelTest{
         val value = viewModel.data.value
         verify(liveDataObserver).onChanged(1)
         assertEquals(1, value)
+
+        viewModel.data.removeObserver(liveDataObserver)
     }
 
     @Test
@@ -99,6 +101,8 @@ class AppViewModelTest{
         val value = viewModel.data.value
         verify(liveDataObserver, never()).onChanged(anyInt())
         assertEquals(null, value)
+
+        viewModel.data.removeObserver(liveDataObserver)
     }
 
     @Test
@@ -113,6 +117,8 @@ class AppViewModelTest{
         val value = viewModel.data.value
         verify(liveDataObserver, never()).onChanged(anyInt())
         assertEquals(null, value)
+
+        viewModel.data.removeObserver(liveDataObserver)
     }
 
     @After
