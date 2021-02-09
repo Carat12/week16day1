@@ -27,5 +27,6 @@ class MainActivity : AppCompatActivity() {
         viewModel.data.observe(this, {
             text_view.text = "Number of subcategories: $it"
         })
+
     }
 }
